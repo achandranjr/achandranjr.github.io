@@ -504,6 +504,33 @@ a.data-val.link:hover, a.data-val.link:focus-visible { color: var(--color-hazard
   padding: var(--spacing-12) var(--spacing-30);
 }
 
+/* ---------- contact bay: compresses to the frame, no scroll ---------- */
+
+#panel-contact {
+  padding-top: clamp(var(--spacing-12), 2.6dvh, var(--spacing-28));
+  padding-bottom: clamp(var(--spacing-12), 2.6dvh, var(--spacing-30));
+}
+#panel-contact .panel-head {
+  margin-bottom: clamp(var(--spacing-9), 2dvh, var(--spacing-21));
+}
+#panel-contact .lede {
+  font-size: clamp(17px, min(3vw, 3.7dvh), 40px);
+  margin-bottom: clamp(var(--spacing-9), 2.2dvh, var(--spacing-24));
+}
+#panel-contact .data-row {
+  padding: clamp(3px, 1dvh, var(--spacing-9)) 0;
+}
+#panel-contact .data-val {
+  font-size: clamp(12px, min(1.6vw, 2.2dvh), 18px);
+}
+#panel-contact .outlink.xl {
+  margin-top: clamp(var(--spacing-9), 2dvh, var(--spacing-21));
+}
+#panel-contact .outlink.xl span {
+  font-size: clamp(15px, min(2.6vw, 2.6dvh), 28px);
+  padding: clamp(6px, 1.4dvh, var(--spacing-12)) clamp(var(--spacing-12), 3vw, var(--spacing-30));
+}
+
 /* ---------- skills racks ---------- */
 
 .rack { margin-bottom: var(--spacing-21); }
