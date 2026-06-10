@@ -113,6 +113,7 @@
   const board = new FlapBoard(document.getElementById("flapboard"), BOARD_SIZE);
   const announce = document.getElementById("board-announce");
   const pageIndex = document.getElementById("board-index");
+  const content = document.getElementById("content");
   const tabs = Array.from(document.querySelectorAll(".nav-link"));
   const panels = Array.from(document.querySelectorAll(".panel"));
 
@@ -129,9 +130,19 @@
     pageIndex.textContent =
       "PAGE 0" + (tabs.indexOf(tab) + 1) + " / 0" + tabs.length;
 
+    content.scrollTop = 0;
     if (updateHash) history.replaceState(null, "", "#" + tab.dataset.tab);
     if (focusPanel) document.getElementById("panel-" + tab.dataset.tab).focus();
   }
+
+  /* collapsible entries — boot / shutdown */
+  document.querySelectorAll(".entry-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const entry = btn.closest(".entry");
+      const open = entry.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => activate(tab.dataset.tab));
